@@ -15,7 +15,7 @@ class Body(val team: Team, val index: Int, val location: Point, val move: Move, 
 		val validatedMove = if (abs(move.vector.distance) <= velocityMaximum) {
 			move 
 		} else {
-			new Move(new Vector(move.vector.angle, velocityMaximum))
+			new Move(Vector.createPolarVector(move.vector.angle, velocityMaximum))
 		}
 //		val distance = move.vector.distance * timeInterval
 //		val newLocation = new LineSegment(location, move.directionAngle, distance).pointB
